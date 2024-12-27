@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Product
 from .forms import ProductForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -31,7 +32,7 @@ class ProductDetailView(DetailView):
 
 class ProductUpdateView(UpdateView):
     def get(self, request, pk):
-        form = ProductForm()
+        form = ProductForm(instance=Product.objects.get(pk=pk))
         return render(request, 'product/product_update.html', context={'form': form})
     
     def post(self, request, pk):
