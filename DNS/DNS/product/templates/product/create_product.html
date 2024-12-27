@@ -1,0 +1,17 @@
+{% extends 'product/base.html' %}
+{% block title %}Вход{% endblock title %}
+{% block content %}
+<div class="d-flex justify-content-center" style="margin-top: 10%">
+  <form
+    class="flex-column w-25 gap-0"
+    method="post"
+  >
+  <h1>Создать продукт</h1>
+    {%csrf_token%}
+    <table class="">
+      {{form.as_p}}
+    </table>
+    <input class="m-3" type="submit" value="Создать" />
+  </form>
+</div>
+{% endblock content %}

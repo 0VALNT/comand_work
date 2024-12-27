@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Главная Страница</h1>
+    {% for prod in product %}
+        <p>{{ prod.title }}</p>
+        <p>{{ prod.price }}</p>
+        <a href="{% url 'detail' prod.id %}">Подробнее</a>
+        <a href="{% url 'update' prod.id %}">Обновить</a>
+        <a href="{% url 'delete' prod.id %}">Удалить</a>
+        <button type="submit">Заказ</button>
+    {% endfor %}
+{% endblock %}
