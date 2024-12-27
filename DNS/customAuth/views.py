@@ -6,6 +6,7 @@ from .forms import SignUpForm
 from django.views.generic import CreateView
 
 
+
 def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
