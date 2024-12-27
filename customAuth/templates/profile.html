@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    Привет {{user.username}}!<br>
+Ваша почта: {{user.email}}<br>
+<a href="{% url "logout_user" %}">Выйти</a><br>
+<a href="#">Магазин</a><br>
+</body>
+</html>
